@@ -1,1 +1,1 @@
-!["Component Diagram"]("ComponentDiagram1.png")
+![Component Diagram](ComponentDiagram1.png)
