@@ -1,14 +1,14 @@
 # Milestones for SkiGenius
 
-- [ ] Milestone 1:
+- [ ] **Milestone 1**:
   
   High level design with component specifications.
 
-- [ ] Milestone 2 (Low level design part 1):
+- [ ] **Milestone 2** (Low level design part 1):
   
   Decide on User inputs and other user related information we will be collecting (like current location)
 
-- [ ] Milestone 3: 
+- [ ] **Milestone 3**: 
   
    Decide on the features to be used for recommendation vectors and which ones for filtering.
 
@@ -19,7 +19,7 @@
     - [ ] Decide on how many recommendations we should return (i.e the value of "x")
     - [ ] Should the filtering be applied on top of the recommended records or should we go with filter and then recommend?
 
-- [ ] Milestone 4: 
+- [ ] **Milestone 4**: 
  
   Data preprocessing and data vectorization.
   
@@ -31,19 +31,19 @@
    - [ ] Generate vectors
    - [ ] Decide on DB schema i.e the structure of the mongoDB object, what fields should each object contain? 
   
-- [ ] Milestone 6: 
+- [ ] **Milestone 6**: 
   
     Setup the Database
     
     Primary owner: 
     
     TODO:
-        - [ ] Setup instance on Atlas
-        - [ ] Configure Data on the instance (there is an option to upload as CSV)
-        - [ ] Setup Search Index (required for KNN beta and will speed up other search strategies as well)
-        - [ ] Test connection to DB and write test cases for DB operations
+    - [ ] Setup instance on Atlas
+    - [ ] Configure Data on the instance (there is an option to upload as CSV)
+    - [ ] Setup Search Index (required for KNN beta and will speed up other search strategies as well)
+    - [ ] Test connection to DB and write test cases for DB operations
   
-- [ ]  Milestone 7 (can be done in tandem with milestone 6): 
+- [ ]  **Milestone 7** (can be done in tandem with milestone 6): 
     
     Front end prototype/wireframes.
     
@@ -54,7 +54,7 @@
     - [ ] Implement filter functionality (front end)
     - [ ] Write test cases for each UI operation i.e are all the buttons and input methods working as expected, etc.
   
-- [ ] Milestone 8: 
+- [ ] **Milestone 8**: 
     
     Work on the processing module.
     
@@ -67,7 +67,7 @@
     - [ ] Test cases to check communication with DB
     - [ ] Test cases for filtering logic (tentative)
 
-- [ ] Milestone 9:
+- [ ] **Milestone 9**:
     
     Preparing for demos.
     
