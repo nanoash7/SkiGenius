@@ -1,5 +1,5 @@
 import streamlit as st
-import datetime as dt
+from frontendutil import build_query_vector
 
 st.markdown("<h1 style='text-align: center; color: black;'>Ski Genius: A US Ski Resort Recommendation Tool</h1>", unsafe_allow_html=True)
 
@@ -15,6 +15,10 @@ if st.button('Get Results'):
     st.session_state['max_price'] = max_price
     st.session_state['skill_level'] = skill_level
     st.session_state['target_date'] = target_date
-    # Query goes here
 
-result = st.session_state['result'] if 'result' in st.session_state else ""
+    # Query goes here
+    st.session_state['query'] = build_query_vector(st.session_state['skill_level'], st.session_state['location'], st.session_state['target_date'].month)
+
+st.write(st.session_state['query'] if 'query' in st.session_state else "")
+st.write(st.session_state['max_price'] if 'max_price' in st.session_state else "")
+
