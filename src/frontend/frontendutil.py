@@ -7,7 +7,8 @@ This helper function creates the vectorized query input using user values from f
 @param location_filter: 0 if the location param is a City and 1 if the location param is a State
 @param location: A City or State name depending on the location_filter parameter
 @param month: A integer from 1 to 12 corresponding to a month in the year
-@return: A list of values in the following order: Difficulty Rating, Latitude, Longitude, followed by 12 month indicators
+@return: A list of values in the following order: Difficulty Rating, Latitude, Longitude, followed by 12 month indicators. 
+         Returns -1 if the location param is invalid.
 """
 def build_query_vector(skill_level, location, month):
     # Skill level needs to be converted to an integer between -48 and 97
@@ -17,6 +18,8 @@ def build_query_vector(skill_level, location, month):
     # Location needs to be converted from city/state name to lat/long
     g = geo.bing(location, key=bing_api_key)
     result = g.json
+    if result is None:
+        return -1
     vector.append(result['lat'])
     vector.append(result['lng'])
 

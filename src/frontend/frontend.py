@@ -16,9 +16,9 @@ if st.button('Get Results'):
     st.session_state['skill_level'] = skill_level
     st.session_state['target_date'] = target_date
 
-    # Query goes here
     st.session_state['query'] = build_query_vector(st.session_state['skill_level'], st.session_state['location'], st.session_state['target_date'].month)
-
-st.write(st.session_state['query'] if 'query' in st.session_state else "")
-st.write(st.session_state['max_price'] if 'max_price' in st.session_state else "")
-
+    if st.session_state['query'] == -1:
+        st.error("Invalid Location")
+    else:
+        # Perform the search using st.session_state['query'] and st.session_state['max_price']
+        pass
