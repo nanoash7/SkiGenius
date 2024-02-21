@@ -18,12 +18,13 @@ def vectorize_csv(file,columns):
       list columns - list of columns to be vectorized
     Outputs: 
     list vectors: list of vectors (lists) to write to db
+    list info: list of dicts containing other info - Name of resort, price and state
     """
     df = pd.read_csv(file)
     df_subset = df[columns]
     categorical_cols = df_subset.select_dtypes(['category','object']).columns
     df_encoded = pd.get_dummies(df_subset, columns = categorical_cols)
-    resort_names = df["Resort"]
+    info = df[["Resort","State","Price"]].to_dict("records")
     vectors = df_encoded.values.tolist()
-    return vectors, resort_names
+    return vectors, info
 
