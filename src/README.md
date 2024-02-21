@@ -3,4 +3,5 @@ To run frontend.py, execute 'streamlit run src/frontend/frontend.py' from the ro
 
 # Dependencies
 pip install streamlit
+
 pip install geocoder
