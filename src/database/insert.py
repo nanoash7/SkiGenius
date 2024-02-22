@@ -15,8 +15,9 @@ def insert_records(collection,file, columns):
 
     for detail,vector in list(zip(info,vectors)):
         doc["Name"] = detail["Resort"]
-        doc["State"] = detail["State"]
+        doc["State"] = detail["state_full"]
         doc["Price"] = detail["Price"]
+        doc["Snow"] = detail["Total snow"]
         doc["vector"] = vector
         result = collection.insert_one(doc.copy())
 
