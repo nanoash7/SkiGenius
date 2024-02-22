@@ -24,7 +24,7 @@ def vectorize_csv(file,columns):
     df_subset = df[columns]
     categorical_cols = df_subset.select_dtypes(['category','object']).columns
     df_encoded = pd.get_dummies(df_subset, columns = categorical_cols)
-    info = df[["Resort","State","Price"]].to_dict("records")
+    info = df[["Resort","state_full","Price","Total snow"]].to_dict("records")
     vectors = df_encoded.values.tolist()
     return vectors, info
 

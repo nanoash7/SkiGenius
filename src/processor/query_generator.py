@@ -30,6 +30,7 @@ def create_pipeline(query,topn):
             "Name": 1,
             "Price": 1,
             "State": 1,
+            "Snow": 1,
             'score': {
                 '$meta': 'searchScore'
             }
