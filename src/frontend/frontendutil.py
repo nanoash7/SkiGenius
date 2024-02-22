@@ -11,9 +11,9 @@ This helper function creates the vectorized query input using user values from f
          Returns -1 if the location param is invalid.
 """
 def build_query_vector(skill_level, location, month):
-    # Skill level needs to be converted to an integer between -48 and 97
+    # Skill level needs to be converted to an integer between -100 and 100
     vector = list()
-    vector.append(int(-48 + 1.45*skill_level))
+    vector.append(int(-100 + 2*skill_level))
 
     # Location needs to be converted from city/state name to lat/long
     g = geo.bing(location, key=bing_api_key)
