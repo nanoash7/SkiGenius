@@ -1,7 +1,14 @@
 import os
+
 from dotenv import load_dotenv
 from processor.query_generator import create_pipeline, query_neighbors
 from database.create import connect_to_db
+
+load_dotenv()
+URI = os.getenv('MONGO_URI')
+client = connect_to_db(URI)
+db = client["ski_info"]
+collection = db["resorts"]
 
 """
 Use this function to query db from front end
@@ -10,13 +17,6 @@ from query_unit import query
 query(user_ip) 
 Make sure that the .env file is present and contains the URI
 """
-
-load_dotenv()
-URI = os.getenv('MONGO_URI')
-client = connect_to_db(URI)
-db = client["ski_info"]
-collection = db["resorts"]
-
 def query(user_pref_vector, max_price, num_results):
     """
     Function to query db with user inputs from front-end
