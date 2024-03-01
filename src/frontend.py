@@ -9,6 +9,7 @@ import math
 import streamlit as st
 import pandas as pd
 
+# pylint: disable=import-error
 from frontendutil import build_query_vector
 from query_unit import query
 
