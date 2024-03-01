@@ -41,6 +41,6 @@ def query(user_pref_vector, max_price, num_results):
     def snow_compare(obj):
         return float(obj["Snow"])
 
-    snow_sorted_results = sorted(price_filtered_results, key=snow_compare, reverse=True)
+    snow_sorted_results = price_filtered_results[0:3] + sorted(price_filtered_results[3:], key=snow_compare, reverse=True)
 
     return snow_sorted_results

@@ -1,5 +1,8 @@
+import math
+
 import streamlit as st
 import pandas as pd
+
 from frontendutil import build_query_vector
 from query_unit import query
 
@@ -15,8 +18,20 @@ target_date = st.date_input("Target Date", value=None)
 
 def create_display(result):
     df = pd.DataFrame(result)
-    df = df.drop(columns= ['_id', 'Snow', 'score'])
-    df.rename(columns={'Name': 'Resort Name', 'Price': 'Average Price (USD)'}, inplace=True)
+    df.rename(columns={'Name': 'Resort Name'}, inplace=True)
+
+    # Get relative pricing
+    min_price = min(df["Price"])
+    max_price = max(df["Price"])
+
+    def get_token_price(price):
+        if min_price == max_price:
+            return "Relative Price Unavailable"
+        return "$" * math.floor((1 + 4 * (price - min_price) / (max_price - min_price)))
+
+    df["Relative Price"] = df["Price"].apply(get_token_price)
+
+    df = df.drop(columns= ['_id', 'Snow', 'score', "Price"])
     df = df.reset_index(drop=True)
     st.session_state['result'] = df
 

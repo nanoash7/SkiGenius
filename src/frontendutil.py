@@ -20,8 +20,8 @@ def build_query_vector(skill_level, location, month):
     result = g.json
     if result is None:
         return -1
-    vector.append(result['lat'])
-    vector.append(result['lng'])
+    vector.append(result['lat'] * 8 - 200)
+    vector.append(result['lng'] * 7.273 + 909.125)
 
     # Month needs to be expanded into 12 indicators
     for i in range(1, 13):
