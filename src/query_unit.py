@@ -25,8 +25,8 @@ def query(user_pref_vector, max_price, num_results):
     list user_pref_vector: vector containing user preferences
 
     Outputs:
-    list results : list of dictionaries containing top num_results neighbors
-
+    list results : list of dictionaries containing top num_results neighbors. First 3 entries are static and
+                   following entries are sorted by descending snow amount.
     """
     pipeline = create_pipeline(user_pref_vector, num_results)
     results = query_neighbors(collection,pipeline)
