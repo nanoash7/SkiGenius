@@ -1,5 +1,3 @@
-import pandas as pd
-
 """
 This module conatins methods to vectorize data
 This module should also handle the encoding of columns into a numeric format
@@ -7,6 +5,7 @@ before vectorization is performed.
 vectorize_csv converts a given subset of a dataframe to a list of vectors
 """
 
+import pandas as pd
 
 
 def vectorize_csv(file,columns):
@@ -27,4 +26,3 @@ def vectorize_csv(file,columns):
     info = df[["Resort","state_full","Price","Total snow"]].to_dict("records")
     vectors = df_encoded.values.tolist()
     return vectors, info
-

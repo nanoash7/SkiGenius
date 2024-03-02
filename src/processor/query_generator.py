@@ -1,3 +1,7 @@
+"""
+This module contains code that creates mongodb query pipelines 
+for query use.
+"""
 
 def create_pipeline(query,topn):
     """

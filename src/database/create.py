@@ -1,4 +1,10 @@
+"""
+This module contains methods to connect to the mongodb server,
+create a database, and initialize a collection.
+"""
+
 import logging
+
 from pymongo import MongoClient
 
 
@@ -18,14 +24,15 @@ def connect_to_db(uri):
 
     client = MongoClient(uri)
 
-    # Try to connect with the database 
+    # Try to connect with the database
     try:
         client.admin.command('ping')
         logging.info("Connection to db successful")
-    except Exception as e:
+    except Exception as e: # pylint: disable=broad-exception-caught
         logging.error(str(e))
-    
+
     return client
+
 
 def create_db(db_name, client):
     """
@@ -39,6 +46,7 @@ def create_db(db_name, client):
     db = client[db_name]
     return db
 
+
 def create_collection(db, collection_name):
     """
     Function create a collection in the database
@@ -50,7 +58,3 @@ def create_collection(db, collection_name):
     """
     collection = db[collection_name]
     return collection
-
-    
-
-
