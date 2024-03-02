@@ -1,5 +1,11 @@
+"""
+This module contains a function that inserts vectorized records
+into the mongodb database.
+"""
+
+# pylint: disable=import-error
 from processor import vectorizer
-from pymongo import MongoClient
+
 
 def insert_records(collection,file, columns):
     """
@@ -19,6 +25,4 @@ def insert_records(collection,file, columns):
         doc["Price"] = detail["Price"]
         doc["Snow"] = detail["Total snow"]
         doc["vector"] = vector
-        result = collection.insert_one(doc.copy())
-
-        
+        collection.insert_one(doc.copy())
