@@ -6,7 +6,6 @@ create a database, and initialize a collection.
 import logging
 
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 
 logging.basicConfig(filename="execution.log", encoding="utf-8", level=logging.DEBUG)
 

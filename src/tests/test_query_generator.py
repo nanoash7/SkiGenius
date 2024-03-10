@@ -26,6 +26,8 @@ class TestQueryGenerator(unittest.TestCase):
         query = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]  # query size 15
         topn = 3
         pipeline = create_pipeline(query, topn)
+
+        # pylint: disable=duplicate-code
         expected_pipeline = [
             {"$search": {"knnBeta": {"vector": query, "path": "vector", "k": topn}}},
             {"$limit": topn},
