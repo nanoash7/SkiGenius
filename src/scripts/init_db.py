@@ -8,16 +8,18 @@ import os
 from dotenv import load_dotenv
 
 # pylint: disable=import-error
-from database import create,insert
-
+from database.create import connect_to_db
+from database.create import create_db
+from database.create import create_collection
+from database.insert import insert_records
 load_dotenv()
 
 URI = os.getenv('MONGO_URI')
-client = create.connect_to_db(URI)
-db = create.create_db("ski_info",client)
-collection = create.create_collection(db,"resorts")
+client = connect_to_db(URI)
+db = create_db("ski_info",client)
+collection = create_collection(db,"resorts")
 columns = (["Difficulty","Scaled_Latitude","Scaled_Longitude",
             "Open January","Open February", "Open March","Open April",
             "Open May", "Open June", "Open July", "Open August",
             "Open September", "Open October", "Open November", "Open December"])
-insert.insert_records(collection,"../data/df_merged_scaled_final.csv",columns)
+insert_records(collection,"../data/df_merged_scaled_final.csv",columns)

@@ -81,6 +81,8 @@ jobs:
 
       # Next step: run the unit tests with code coverage.
       - name: Unit tests
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: |
           cd src
           coverage run -m unittest discover
