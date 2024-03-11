@@ -38,6 +38,10 @@ def create_display(result):
     Returns:
         No return value.
     """
+    if len(result) == 0:
+        st.session_state['result'] = None
+        return
+
     df = pd.DataFrame(result)
     df.rename(columns={'Name': 'Resort Name'}, inplace=True)
 
@@ -77,4 +81,7 @@ if 'result' in st.session_state:
                 Curated results based on your location,
                 experience level, price constraints, and
                 projected snow quality</h1>""", unsafe_allow_html=True)
-    st.table(st.session_state['result'])
+    if st.session_state['result'] is None:
+        st.error("No results found")
+    else:
+        st.table(st.session_state['result'])

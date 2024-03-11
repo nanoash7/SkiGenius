@@ -14,7 +14,6 @@ def build_query_vector(skill_level, location, month):
 
     parameters:
         skill_level: An integer between 0 and 100 that represents the user's experience level
-        location_filter: 0 if the location param is a City and 1 if the location param is a State
         location: A City or State name depending on the location_filter parameter
         month: A integer from 1 to 12 corresponding to a month in the year
 
