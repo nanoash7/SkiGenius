@@ -1,4 +1,7 @@
-# This file contains instructions on how to use this application
+# Instructions on how to use this application
+
+### Application Demo
+To view a brief demonstration of the application, view the SkiGeniusDemo.mp4 file located in this folder
 
 ### Create and Activate a virtual environment using pip:
 Windows Instructions:\
