@@ -1,5 +1,8 @@
 # SkiGenius
 
+### How To Use This Application
+See the examples folder in the root directory of this repository for how to use this app.
+
 ### Project Type: 
 Recommendation and Planning Tool
 

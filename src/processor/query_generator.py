@@ -29,6 +29,8 @@ def create_pipeline(query, topn):
         raise ValueError("Query length must be 15")
     if topn < 1:  # topn must be at least 1
         raise ValueError("Top N must be at least 1")
+
+    # pylint: disable=duplicate-code
     pipeline = [
         {"$search": {"knnBeta": {"vector": query, "path": "vector", "k": topn}}},
         {"$limit": topn},
