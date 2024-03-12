@@ -3,7 +3,7 @@ channels:
   - defaults
 dependencies:
   - pip
-  - python=3.12
+  - python=3
   - pip:
       - coverage==7.4.3
       - geocoder==1.38.1
