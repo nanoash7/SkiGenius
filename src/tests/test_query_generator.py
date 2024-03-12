@@ -92,7 +92,7 @@ class TestQueryGenerator(unittest.TestCase):
             1,
         ]
         topn = 1
-        uri = os.getenv("MONGO_URI")
+        uri = os.environ["MONGO_URI"]
         client = connect_to_db(uri)
         db = client["ski_info"]
         collection = db["resorts"]

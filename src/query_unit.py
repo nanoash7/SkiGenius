@@ -17,7 +17,7 @@ from database.create import connect_to_db
 
 logging.basicConfig(filename="execution.log", encoding="utf-8", level=logging.DEBUG)
 load_dotenv(find_dotenv())
-URI = os.getenv("MONGO_URI")
+URI = os.environ["MONGO_URI"]
 client = connect_to_db(URI)
 db = client["ski_info"]
 collection = db["resorts"]
