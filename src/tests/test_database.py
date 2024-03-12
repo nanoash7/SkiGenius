@@ -22,7 +22,7 @@ from database.create import connect_to_db, create_collection, create_db
 
 
 load_dotenv()
-URI = os.getenv("MONGO_URI")
+URI = os.environ["MONGO_URI"]
 
 
 class TestDatabase(unittest.TestCase):
