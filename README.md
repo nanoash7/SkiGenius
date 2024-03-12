@@ -1,7 +1,10 @@
 # SkiGenius
 
-### How To Use This Application
-See the examples folder in the root directory of this repository for how to use this app.
+### Access the Application
+Ski Genius is hosted through the streamlit community cloud resource at https://skigenius.streamlit.app/
+
+### How To Use This Application Locally
+See the examples folder in the root directory of this repository for how to use this app on your local system.
 
 ### Project Type: 
 Recommendation and Planning Tool
