@@ -3,7 +3,7 @@
 ### How To Use This Application
 See the examples folder in the root directory of this repository for how to use this app.
 
-### Project Type: 
+### Project Type:
 Recommendation and Planning Tool
 
 ### Questions of Interest:
@@ -18,8 +18,17 @@ Provide recommendations based on skill level, budget, and location preferences.
 
 
 ### Data Sources:
-https://www.kaggle.com/datasets/ulrikthygepedersen/ski-resorts?select=resorts.csv 
-http://ski-resort-stats.com/find-ski-resort/#1498675249678-9966e624-d30e 
+https://www.kaggle.com/datasets/ulrikthygepedersen/ski-resorts?select=resorts.csv
+http://ski-resort-stats.com/find-ski-resort/#1498675249678-9966e624-d30e
 https://www.kaggle.com/code/beaubellamy/ski-resorts
-https://www.nsaa.org/NSAA/Media/Who_Owns_Which_Mountain_Resorts.aspx 
+https://www.nsaa.org/NSAA/Media/Who_Owns_Which_Mountain_Resorts.aspx
+
+### Exclusions from testing:
+The scripts folder do not have any test cases associated with them. This is because they contain one-time usage code that is only
+needed to get the DB up and running.
+
+### Some exclusions from the linter:
+- We disabled the linting for relative imports of modules from our codebase due to a known pylint bug - https://github.com/pylint-dev/pylint/issues/3984
+- Ignoring the duplicate code warning in test_query_generator.py since we are only creating a pipeline to test if it is as expected.
+
 
