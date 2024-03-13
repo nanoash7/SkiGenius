@@ -2,15 +2,15 @@
 # There are a number of supported build systems, but here we'll use
 # the "setuptools" package.
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 # The "project" section contains metadata about the project, like
 # the authors and version. Note that the `dynamic` setting here
 # is very important so that the build system packages up your
 # dependencies!
 [project]
-name = "skiGenius"
+name = "SkiGenius"
 version = "0.0.1"
 authors = [
   { name="Ashwin Naresh" },
@@ -27,6 +27,9 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dynamic = ["dependencies"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["SkiGenius"]
 
 # In conjunction with the "dynamic" option above in the "project"
 # section, this tells the build system to add any dependencies
