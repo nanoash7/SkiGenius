@@ -8,7 +8,7 @@ See the examples folder in the root directory of this repository for how to use 
 
 ### Workflow Report
 ![Coverage Status](https://coveralls.io/repos/github/nanoash7/SkiGenius/badge.svg?branch=main)\
-![badge_test]([https://github.com/nanoash7/SkiGenius/actions/workflows/main.yml/badge.svg])
+![badge_test](https://github.com/nanoash7/SkiGenius/actions/workflows/build_test.yml/badge.svg)
 
 ### Project Type: 
 Recommendation and Planning Tool
