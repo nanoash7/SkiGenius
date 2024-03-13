@@ -7,8 +7,8 @@ Ski Genius is hosted through the streamlit community cloud resource at https://s
 See the examples folder in the root directory of this repository for how to use this app on your local system.
 
 ### Workflow Report
-[![Coverage Status](https://coveralls.io/repos/github/nanoash7/SkiGenius/badge.svg?branch=main)](https://coveralls.io/github/nanoash7/SkiGenius?branch=main)\
-![badge_test](https://github.com/nanoash7/SkiGenius/actions/workflows/main.yml/badge.svg)
+![Coverage Status](https://coveralls.io/repos/github/nanoash7/SkiGenius/badge.svg?branch=main)\
+![badge_test]([https://github.com/nanoash7/SkiGenius/actions/workflows/main.yml/badge.svg])
 
 ### Project Type: 
 Recommendation and Planning Tool
